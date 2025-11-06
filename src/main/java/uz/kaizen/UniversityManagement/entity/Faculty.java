@@ -7,19 +7,18 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-public class UniversityEntity {
+public class Faculty {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Id
     private UUID uuid;
-    @Column(unique = true,nullable = false)
-    private String universityName;
-    @Column(nullable = true)
-    private String universityShortName;
     @Column(nullable = false)
-    private String universityCEO;
-
+    private String facultyName;
+    @Column(nullable = false)
+    private String facultyCEO;
+    @ManyToOne
+    private University universityEntity;
 }

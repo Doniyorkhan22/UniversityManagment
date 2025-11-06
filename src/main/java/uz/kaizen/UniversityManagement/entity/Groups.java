@@ -11,7 +11,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class GroupEntity {
+public class Groups {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Id
     private UUID uuid;
@@ -20,8 +20,7 @@ public class GroupEntity {
     @Column(nullable = false)
     private String groupOwner;
     @ManyToOne
-    private FacultyEntity facultyEntity;
-    @ManyToOne
-    private UniversityEntity universityEntity;
+    private Faculty facultyEntity;
+
 
 }

@@ -11,7 +11,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class StudentEntity {
+public class Student {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Id
     private UUID uuid;
@@ -26,9 +26,6 @@ public class StudentEntity {
     @Column(nullable = false)
     private String password;
     @ManyToOne
-    private GroupEntity groupEntity;
-    @ManyToOne
-    private FacultyEntity facultyEntity;
-    @ManyToOne
-    private UniversityEntity universityEntity;
+    private Groups groupEntity;
+
 }
